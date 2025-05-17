@@ -9,15 +9,28 @@ if (n > m) {
     m = temp;
 }
 
-let i = m - 1;
-let result;
-while (!result) {
-    const temp1 = n % i;
-    const temp2 = m % i;
-    if (temp1 == 0 && temp2 == 0) {
-        result = i;
+const nDivisor = [];
+const mDivisor = [];
+for (let i=2; i<n; i++) {
+    const isNDivided = n % i;
+    if (isNDivided === 0) {
+        nDivisor.push(i);
     }
-    i--;
-    if (i < 0) break;
 }
-console.log(result);
+for (let i=2; i<m; i++) {
+    const isMDivided = m % i;
+    if (isMDivided === 0) {
+        mDivisor.push(i);
+    }
+}
+
+if (!mDivisor.length || !nDivisor.length) {
+    console.log(1);
+}
+
+for (let i=nDivisor.length-1; i>0; i--) {
+    if (mDivisor.includes(nDivisor[i])) {
+        console.log(nDivisor[i]);
+        break;
+    }
+}
