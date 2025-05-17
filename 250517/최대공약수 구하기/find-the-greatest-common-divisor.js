@@ -28,9 +28,14 @@ if (!mDivisor.length || !nDivisor.length) {
     console.log(1);
 }
 
+let result;
 for (let i=nDivisor.length-1; i>0; i--) {
     if (mDivisor.includes(nDivisor[i])) {
-        console.log(nDivisor[i]);
+        result = nDivisor[i];
+        console.log(result);
         break;
     }
+}
+if (!result) {
+    console.log(result);
 }
