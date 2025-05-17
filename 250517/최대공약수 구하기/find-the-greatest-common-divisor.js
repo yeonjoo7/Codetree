@@ -11,21 +11,17 @@ if (n > m) {
 
 const nDivisor = [];
 const mDivisor = [];
-for (let i=2; i<n; i++) {
+for (let i=1; i<n; i++) {
     const isNDivided = n % i;
     if (isNDivided === 0) {
         nDivisor.push(i);
     }
 }
-for (let i=2; i<m; i++) {
+for (let i=1; i<m; i++) {
     const isMDivided = m % i;
     if (isMDivided === 0) {
         mDivisor.push(i);
     }
-}
-
-if (!mDivisor.length || !nDivisor.length) {
-    console.log(1);
 }
 
 let result;
