@@ -29,7 +29,7 @@ if (!mDivisor.length || !nDivisor.length) {
 }
 
 let result;
-for (let i=nDivisor.length-1; i>0; i--) {
+for (let i=nDivisor.length-1; i>=0; i--) {
     if (mDivisor.includes(nDivisor[i])) {
         result = nDivisor[i];
         console.log(result);
