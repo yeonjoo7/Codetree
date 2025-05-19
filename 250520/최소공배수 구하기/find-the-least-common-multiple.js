@@ -18,7 +18,9 @@ for (let i=2; i<largerNumber; i++) {
 const uniqueNumbers = nDivisor.filter((d) => !mDivisor.includes(d))
 mDivisor.forEach((d) => !nDivisor.includes(d) ? uniqueNumbers.push(d) : undefined)
 
-const result = uniqueNumbers.reduce((acc, curr)=> 
-    acc *= curr
-, 1)
+const result = uniqueNumbers.reduce((acc, curr)=> {
+   if (acc % curr !== 0) {
+    return acc *= curr
+   }
+}, 1)
 console.log(result)
